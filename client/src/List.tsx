@@ -24,23 +24,26 @@ const List: React.FC = (): JSX.Element => {
     <>
       <div className="users-container">
         <h2 className="users-title">Users</h2>
-        {loading && <Rings color="#00BFFF" height={80} width={80} />}
-        <table>
-          <tbody>
-            <tr>
-              <th>First name</th>
-              <th>Last name</th>
-            </tr>
-            {users.map((user, index) => {
-              return (
-                <tr key={"tableRow" + index}>
-                  <td>{user.first_name}</td>
-                  <td>{user.last_name}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        {loading ? (
+          <Rings color="#00BFFF" height={80} width={80} />
+        ) : (
+          <table>
+            <tbody>
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+              </tr>
+              {users.map((user, index) => {
+                return (
+                  <tr key={"tableRow" + index}>
+                    <td>{user.first_name}</td>
+                    <td>{user.last_name}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        )}
       </div>
     </>
   );
