@@ -11,8 +11,7 @@ const List: React.FC = (): JSX.Element => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get("http://localhost:3000/users");
-        const userData: Array<User> = response.data;
-        setUsers(userData);
+        setUsers(response.data);
         setLoading(false);
       } catch (error) {
         console.log(error);

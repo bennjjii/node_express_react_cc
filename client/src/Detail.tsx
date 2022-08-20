@@ -14,8 +14,7 @@ const Detail: React.FC = (): JSX.Element => {
         const response = await axios.get(
           `http://localhost:3000/users/${params.id}`
         );
-        const userData: User = response.data;
-        setUser(userData);
+        setUser(response.data);
         setLoading(false);
       } catch (error) {
         console.log(error);
