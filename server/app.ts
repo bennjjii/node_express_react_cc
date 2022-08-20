@@ -1,4 +1,7 @@
-var userData = require("./data/users.json");
+import { Request, Response, NextFunction } from "express";
+import { User } from "./types";
+
+var userData: User[] = require("./data/users.json");
 
 var createError = require("http-errors");
 var express = require("express");
@@ -23,25 +26,31 @@ app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname, "./../client/build")));
 
 console.log(userData);
-app.get("/users", (req, res) => {
-  res.json(userData);
+app.get("/users", (req: Request, res: Response) => {
+  const mockDelay = setTimeout(() => {
+    clearTimeout(mockDelay);
+    res.json(userData);
+  }, 1000);
 });
 
-app.get("/users/:id", (req, res) => {
-  res.json(userData.find((user) => user.id == req.params.id));
+app.get("/users/:id", (req: Request, res: Response) => {
+  const mockDelay = setTimeout(() => {
+    clearTimeout(mockDelay);
+    res.json(userData.find((user) => user.id == +req.params.id));
+  }, 1000);
 });
 
-app.get("/*", (req, res) => {
+app.get("/*", (req: Request, res: Response) => {
   res.sendFile(path.resolve(__dirname, "./../client/build", "index.html"));
 });
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function (req: Request, res: Response, next: NextFunction) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function (err:any, req: any, res: any, next: NextFunction) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
