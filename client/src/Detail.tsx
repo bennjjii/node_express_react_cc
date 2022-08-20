@@ -24,57 +24,59 @@ const Detail: React.FC = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="details-container">
-      {loading && <Rings color="#00BFFF" height={80} width={80} />}
-      {user && (
-        <div>
-          <table>
-            <tbody>
-              <tr>
-                <td>First name </td>
-                <td>{user.first_name}</td>
-              </tr>
-              <tr>
-                <td>Last name</td>
-                <td>{user.last_name}</td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td>{user.email}</td>
-              </tr>
-              <tr>
-                <td>Date of Birth</td>
-                <td>{user.dob}</td>
-              </tr>
-              <tr>
-                <td>Skills</td>
-                <td>{user.skills.join(", ")}</td>
-              </tr>
-              <tr>
-                <td>Company Name</td>
-                <td>{user.company.name}</td>
-              </tr>
-              <tr>
-                <td>Company Department</td>
-                <td>{user.company.department}</td>
-              </tr>
-              <tr>
-                <td>Email verified?</td>
-                <td>{user.emailVerified ? "true" : "false"}</td>
-              </tr>
-              <tr>
-                <td>Avatar</td>
-                <td>{user.avatar}</td>
-              </tr>
-              <tr>
-                <td>Id</td>
-                <td>{user.id}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      )}
-      {loading === false && !user && <div>User not found</div>}
+    <div className="details-container-container">
+      <div className="details-container">
+        {loading && <Rings color="#00BFFF" height={80} width={80} />}
+        {user && (
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>First name </td>
+                  <td>{user.first_name}</td>
+                </tr>
+                <tr>
+                  <td>Last name</td>
+                  <td>{user.last_name}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>{user.email}</td>
+                </tr>
+                <tr>
+                  <td>Date of Birth</td>
+                  <td>{user.dob}</td>
+                </tr>
+                <tr>
+                  <td>Skills</td>
+                  <td>{user.skills.join(", ")}</td>
+                </tr>
+                <tr>
+                  <td>Company Name</td>
+                  <td>{user.company.name}</td>
+                </tr>
+                <tr>
+                  <td>Company Department</td>
+                  <td>{user.company.department}</td>
+                </tr>
+                <tr>
+                  <td>Email verified?</td>
+                  <td>{user.emailVerified ? "true" : "false"}</td>
+                </tr>
+                <tr>
+                  <td>Avatar</td>
+                  <td>{user.avatar}</td>
+                </tr>
+                <tr>
+                  <td>Id</td>
+                  <td>{user.id}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        {loading === false && !user && <div>User not found</div>}
+      </div>
     </div>
   );
 };
