@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,12 +8,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
+  background-color:cornflowerblue;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #root {
-  width: 100%;
   height: 100vh;
-  /* background-color:darkgray */
+  color: wheat;
 }
 
 .users-container {
@@ -20,6 +26,19 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  background-color: royalblue;
+  width: 20rem;
+  padding-bottom: 1rem;
+  margin: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 0 currentColor, 0 6px 15px 1px rgba(29, 82, 106, 0.51);
+}
+
+.details-container-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .details-container {
@@ -27,26 +46,33 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-}
+  background-color: royalblue;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 0 currentColor, 0 6px 15px 1px rgba(29, 82, 106, 0.51);
+  }
 
 .user {
   margin: 0rem;
   padding: 0.25rem;
-  /* background-color:deepskyblue;
-  color: dimgray; */
   border-radius: 10px;
 }
 
 .nav-link,
 .nav-link:visited {
   text-decoration: none;
-  color: black;
+  color: wheat;
 }
 
 td,
 th {
   padding-right: 0.5rem;
+  font-weight: 500;
+}
+
+th {
+
+  font-weight: 700;
 }
 
 td:first-child {
