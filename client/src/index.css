@@ -38,6 +38,9 @@ body {
   border-radius: 10px;
 }
 
-/* .users-title {
-  color: deepskyblue;
-} */
+td, th {
+  padding-right: 0.5rem;
+}
+td:first-child {
+  text-align: right;
+}
