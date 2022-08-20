@@ -8,15 +8,15 @@ Clone the repo
 
 Navigate to /client, run
 
-`npm install`
+`yarn install`
 
 then
 
-`npm run build`
+`yarn build`
 
 then navigate to /server, and run
 
-`npm install`
+`yarn install`
 
 then
 
