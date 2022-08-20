@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Rings } from "react-loader-spinner";
 import { User } from "./types";
 
@@ -36,8 +37,16 @@ const List: React.FC = (): JSX.Element => {
               {users.map((user, index) => {
                 return (
                   <tr key={"tableRow" + index}>
-                    <td>{user.first_name}</td>
-                    <td>{user.last_name}</td>
+                    <td>
+                      <Link className="nav-link" to={`/users/${user.id}`}>
+                        {user.first_name}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to={`/users/${user.id}`}>
+                        {user.last_name}
+                      </Link>
+                    </td>
                   </tr>
                 );
               })}
