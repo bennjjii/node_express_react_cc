@@ -38,6 +38,11 @@ body {
   border-radius: 10px;
 }
 
+.nav-link, .nav-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
 td, th {
   padding-right: 0.5rem;
 }

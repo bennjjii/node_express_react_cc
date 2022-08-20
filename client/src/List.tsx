@@ -1,20 +1,19 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useMachine } from "@xstate/react";
 import { loadingMachine } from "./loadingMachine";
 import { Rings } from "react-loader-spinner";
 import { User } from "./types";
 
-const List: React.FC = (): JSX.Element => {
+const List: React.FC = (props): JSX.Element => {
   const [users, setUsers] = useState<Array<User>>([]);
-  const [loading, setLoading] = useState<boolean>(true);
   const [current, send] = useMachine(loadingMachine);
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get("http://localhost:3000/users");
         setUsers(response.data);
-        setLoading(false);
         if (response.data) {
           send("SUCCESS");
         } else {
@@ -44,8 +43,16 @@ const List: React.FC = (): JSX.Element => {
               {users.map((user, index) => {
                 return (
                   <tr key={"tableRow" + index}>
-                    <td>{user.first_name}</td>
-                    <td>{user.last_name}</td>
+                    <td>
+                      <Link className="nav-link" to={`/users/${user.id}`}>
+                        {user.first_name}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to={`/users/${user.id}`}>
+                        {user.last_name}
+                      </Link>
+                    </td>
                   </tr>
                 );
               })}
