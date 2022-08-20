@@ -25,14 +25,14 @@ app.use(cookieParser());
 //define routes here
 app.use(express.static(path.resolve(__dirname, "./../client/build")));
 
-app.get("/users", (req: Request, res: Response) => {
+app.get("/api/users", (req: Request, res: Response) => {
   const mockDelay = setTimeout(() => {
     clearTimeout(mockDelay);
     res.json(userData);
   }, 1000);
 });
 
-app.get("/users/:id", (req: Request, res: Response) => {
+app.get("/api/users/:id", (req: Request, res: Response) => {
   const mockDelay = setTimeout(() => {
     clearTimeout(mockDelay);
     res.json(userData.find((user) => user.id == +req.params.id));

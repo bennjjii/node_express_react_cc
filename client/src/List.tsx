@@ -10,7 +10,7 @@ const List: React.FC = (): JSX.Element => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/users");
+        const response = await axios.get("http://localhost:3000/api/users");
         setUsers(response.data);
         setLoading(false);
       } catch (error) {

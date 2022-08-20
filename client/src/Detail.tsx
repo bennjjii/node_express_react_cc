@@ -12,7 +12,7 @@ const Detail: React.FC = (): JSX.Element => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/users/${params.id}`
+          `http://localhost:3000/api/users/${params.id}`
         );
         setUser(response.data);
         setLoading(false);
