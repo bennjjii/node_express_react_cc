@@ -23,11 +23,11 @@ body {
 }
 
 .details-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .user {
@@ -38,6 +38,17 @@ body {
   border-radius: 10px;
 }
 
-/* .users-title {
-  color: deepskyblue;
-} */
+.nav-link,
+.nav-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+td,
+th {
+  padding-right: 0.5rem;
+}
+
+td:first-child {
+  text-align: right;
+}
