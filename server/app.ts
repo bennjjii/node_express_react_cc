@@ -25,7 +25,6 @@ app.use(cookieParser());
 //define routes here
 app.use(express.static(path.resolve(__dirname, "./../client/build")));
 
-console.log(userData);
 app.get("/users", (req: Request, res: Response) => {
   const mockDelay = setTimeout(() => {
     clearTimeout(mockDelay);
